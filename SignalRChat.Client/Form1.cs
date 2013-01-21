@@ -23,7 +23,7 @@ namespace SignalRChat.Client
 private void Form1_Load(object sender, EventArgs e)
 {
     SetStatus("Connecting");
-    connection = new HubConnection("http://localhost:8080/chatserver", false);
+    connection = new HubConnection(" http://veloursnebelsignalrchat.azurewebsites.net:80/chatserver", false);
 
     myHub = connection.CreateHubProxy("ChatHub");
 
@@ -51,14 +51,18 @@ private void Form1_Load(object sender, EventArgs e)
                             {
                                 Message(args[0].ToString());
                             };
-                                    
+
                             UpdateUsers();
 
                             timer1.Enabled = true;
                         }
                     });
                 }
-                       
+
+            }
+            else
+            {
+                
             }
 
         });
