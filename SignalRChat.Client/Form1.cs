@@ -23,7 +23,7 @@ namespace SignalRChat.Client
 private void Form1_Load(object sender, EventArgs e)
 {
     SetStatus("Connecting");
-    connection = new HubConnection(" http://veloursnebelsignalrchat.azurewebsites.net:80/chatserver", false);
+    connection = new HubConnection(" http://YOUR_URL/chatserver", false);
 
     myHub = connection.CreateHubProxy("ChatHub");
 
